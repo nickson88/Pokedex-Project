@@ -19,19 +19,35 @@ pokedex = open("./pokedex.json", encoding="utf8")
 data = json.load(pokedex)
 print(data[0])
 def pokedex():
-    while True:
-        language = input("What language would you like to choose? 1 for English/2 for Japanese/3 for Chinese/4 for French") 
-        if () == "1":
-            lang = "english"
-            break
-        elif () == "2":
-            lang = "japanese"
-            break
-        elif () == "3":
-            lang = "chinese"
-            break
-        elif () == "4":
-            lang = "french"
-            break
-print(data[lang])
+    for pokemon in data:
+        x=input("What language would you like? There is English, Japanese, Chinese, and French")
+        if x == "English":
+                print(pokemon["name"]["english"])
+                return
+        elif x == "Japanese":
+                print(pokemon["name"]["japanese"])
+                return   
+        elif x == "Chinese":
+                print(pokemon["name"]["chinese"])
+                return
+        elif x == "French":
+                print(pokemon["name"]["french"])
+                return        
+pokedex()
+
+# while True:
+#         language = input("What language would you like to choose? 1 for English/2 for Japanese/3 for Chinese/4 for French") 
+#         if () == "1":
+#             lang = "english"
+#             break
+#         elif () == "2":
+#             lang = "japanese"
+#             break
+#         elif () == "3":
+#             lang = "chinese"
+#             break
+#         elif () == "4":
+#             lang = "french"
+#             break
+# print(data[lang])
         
