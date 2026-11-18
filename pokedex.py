@@ -29,6 +29,18 @@ def language():
                 elif x == "French":
                         print(pokemon["name"]["french"])        
 language()
+# def language():
+#     ask = input("What language would you like?")
+#     for pokemon in data:
+#         if ask == "1":
+#             print(pokemon["name"]["english"])
+#         elif ask == "2":
+#             print(pokemon["name"]["japanese"])   
+#         elif ask == "3":
+#             print(pokemon["name"]["chinese"])
+#         elif ask == "4":
+#             print(pokemon["name"]["french"]) 
+# language()
 
 # while True:
 #         language = input("What language would you like to choose? 1 for English/2 for Japanese/3 for Chinese/4 for French") 
