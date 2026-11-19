@@ -18,43 +18,24 @@ import json
 pokedex = open("./pokedex.json", encoding="utf8")
 data = json.load(pokedex)
 def language():
-        x=input("What language would you like? There is English, Japanese, Chinese, and French")
-        for pokemon in range(len(data)):
-                if x == "English":
-                        print(pokemon["name"]["english"])
-                elif x == "Japanese":
-                        print(pokemon["name"]["japanese"])   
-                elif x == "Chinese":
-                        print(pokemon["name"]["chinese"])
-                elif x == "French":
-                        print(pokemon["name"]["french"])        
+    ask = input("What language would you like? 1 English, 2 Japanese, 3 Chinese, 4 French")
+    for pokemon in data:
+        if ask == "1":
+            print(pokemon["name"]["english"])
+        elif ask == "2":
+            print(pokemon["name"]["japanese"])   
+        elif ask == "3":
+            print(pokemon["name"]["chinese"])
+        elif ask == "4":
+            print(pokemon["name"]["french"]) 
 language()
-# def language():
-#     ask = input("What language would you like?")
-#     for pokemon in data:
-#         if ask == "1":
-#             print(pokemon["name"]["english"])
-#         elif ask == "2":
-#             print(pokemon["name"]["japanese"])   
-#         elif ask == "3":
-#             print(pokemon["name"]["chinese"])
-#         elif ask == "4":
-#             print(pokemon["name"]["french"]) 
-# language()
-
-# while True:
-#         language = input("What language would you like to choose? 1 for English/2 for Japanese/3 for Chinese/4 for French") 
-#         if () == "1":
-#             lang = "english"
-#             break
-#         elif () == "2":
-#             lang = "japanese"
-#             break
-#         elif () == "3":
-#             lang = "chinese"
-#             break
-#         elif () == "4":
-#             lang = "french"
-#             break
-# print(data[lang])
-        
+def type():
+    question = input("What pokemon type are you looking for?")
+    found = False
+    for pokemon in data:
+        if question in [pokemon_type.lower() for pokemon_type in pokemon["type"]]:
+            print(pokemon["name"]["english"])
+            found = True
+    if not found:
+        print(f"There is no valid {question} type")
+type()
