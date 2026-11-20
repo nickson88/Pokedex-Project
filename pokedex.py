@@ -30,12 +30,22 @@ def language():
             print(pokemon["name"]["french"]) 
 language()
 def type():
-    question = input("What pokemon type are you looking for?")
+    ask = input("What pokemon type are you looking for?")
     found = False
     for pokemon in data:
-        if question in [pokemon_type.lower() for pokemon_type in pokemon["type"]]:
+        if ask in [pokemon_type.lower() for pokemon_type in pokemon["type"]]:
             print(pokemon["name"]["english"])
             found = True
     if not found:
-        print(f"There is no valid {question} type")
+        print(f"There is no valid {ask} type")
 type()
+def search():
+    ask = input("What specific pokemon are you looking for?")
+    found = False
+    for pokemon in data:
+        if ask in [pokemon_name.lower() for pokemon_name in pokemon["name"]]:
+            print(pokemon["name"]["english"])
+            found = True
+        if not found:
+            print(f"There is no {ask} you searched for.")
+search()
