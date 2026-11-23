@@ -43,7 +43,7 @@ def search():
     ask = input("What specific pokemon are you looking for?")
     found = False
     for pokemon in data:
-        if ask in [pokemon_name.lower() for pokemon_name in pokemon["name"]]:
+        if ask.lower() in pokemon["name"]["english"]:
             print(pokemon["name"]["english"])
             found = True
         if not found:
