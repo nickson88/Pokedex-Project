@@ -50,8 +50,10 @@ def search():
         print(f"There is no {ask} you searched for.")
 search()
 import json
-pokedex = open("./moves.json", encoding="utf8")
-data = json.load(pokedex)
-def moves():
-    ask = input("Which pokemons' moves would you like to see?")
-moves()
+moves = open("./moves.json", encoding="utf8")
+monkey = json.load(moves.file)
+# def see():
+#     ask = input("Which pokemons' moves would you like to see?")
+#     for moves in monkey:
+#         if
+# see()
